@@ -1,3 +1,4 @@
+
 # Social Media API
     T. Nielson
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -30,4 +31,6 @@ Creates users, adds thoughts, adds reactions, and deletes all of the catagories 
 * Email: travis.nielson01@gmail.com
 ## License   
     licensed under the MIT license
+
+
 
