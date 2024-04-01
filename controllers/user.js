@@ -1,4 +1,5 @@
 const { User, Thought } = require('../models');
+// Get all users try/catch
 module.exports = {
     async getAllUsers(req, res) {
         try {
@@ -8,6 +9,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // get user by id try/catch
     async getUserById({ params }, res) {
         try {
             const user = await User.findOne({ _id: params.id }).populate('thoughts').populate('friends');
@@ -20,6 +22,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // Create user try/catch
     async createUser({ body }, res) {
         try {
             const user = await User.create(body);
@@ -28,6 +31,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // add friend try/catch
     async addFriend(req, res) {
         try {
             const user = await User.findOneAndUpdate(
@@ -41,6 +45,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // remove friend try/catch
     async removeFriend(req, res) {
         try {
             const user = await
@@ -55,6 +60,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // update user try/catch
     async updateUser({ params, body }, res) {
         try {
             const user = await User.findOneAndUpdate({ _id: params.id },
@@ -71,6 +77,7 @@ module.exports = {
             res.status(500).json(error);
         }
     },
+    // Delete user try/catch
     async deleteUser({ params }, res) {
         try {
             const user = await User.findOneAndDelete({ _id: params.id });
