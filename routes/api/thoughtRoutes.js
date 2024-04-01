@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// Import all of the API routes from /api/index.js
 const {getAllThoughts, getThoughtById, createThought, deleteThought, addReaction, deleteReaction, updateThought}= require('../../controllers/thought');
 router.route('/').get(getAllThoughts).post(createThought);
 router.route('/:id').get(getThoughtById);
